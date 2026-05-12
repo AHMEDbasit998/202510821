@@ -1,0 +1,82 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    // --- PART 1: Linear Search Algorithm ---
+    // User provides names and ages; program searches for a specific key.
+    string names[5];
+    int ages[5];
+
+    cout << "--- Enter names and ages of 5 family members ---\n";
+    for (int i = 0; i < 5; i++) {
+        cout << "Enter name: ";
+        cin >> names[i];
+        cout << "Enter age: ";
+        cin >> ages[i];
+    }
+
+    string searchKey;
+    cout << "\nEnter the name to search: ";
+    cin >> searchKey;
+
+    bool found = false;
+    for (int i = 0; i < 5; i++) {
+        if (names[i] == searchKey) {
+            cout << searchKey << " was found and is aged " << ages[i] << endl;
+            found = true;
+            break; // Stop searching once found
+        }
+    }
+
+    if (!found) {
+        cout << "Not found" << endl;
+    }
+
+    // --- PART 2: Bubble Sorting Algorithm (Names) ---
+    // Sorting the specific names provided in the assignment in ascending order.
+    string listNames[] = {"Zuck", "Shayd", "Emely", "Amjed", "Esther", "Manar", "Anne"};
+    int nNames = 7;
+
+    for (int i = 0; i < nNames - 1; i++) {
+        for (int j = 0; j < nNames - i - 1; j++) {
+            if (listNames[j] > listNames[j + 1]) {
+                // Swap the names
+                string temp = listNames[j];
+                listNames[j] = listNames[j + 1];
+                listNames[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "\n--- Sorted Names in Ascending Order ---\n";
+    for (int i = 0; i < nNames; i++) {
+        cout << listNames[i] << (i < nNames - 1 ? ", " : "");
+    }
+    cout << endl;
+
+    // --- PART 3: Bubble Sort (Numbers) ---
+    // Sorting the specific numbers provided in the assignment.
+    int numbers[] = {109, 99, 23, 45, 23, 2, 5, 1};
+    int nNums = 8;
+
+    for (int i = 0; i < nNums - 1; i++) {
+        for (int j = 0; j < nNums - i - 1; j++) {
+            if (numbers[j] > numbers[j + 1]) {
+                // Swap the numbers
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "\n--- Sorted Numbers in Ascending Order ---\n";
+    for (int i = 0; i < nNums; i++) {
+        cout << numbers[i] << (i < nNums - 1 ? ", " : "");
+    }
+    cout << "\n\n=== Code Execution Successful ===\n";
+
+    return 0;
+}
