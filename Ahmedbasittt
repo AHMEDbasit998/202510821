@@ -1,0 +1,22 @@
+5. Can a void function take a parameter?
+Yes, a void function can take parameters. The void keyword only means the function does not return a value to the caller. It can still accept input values (parameters) to perform tasks like printing or modifying global data.
+• Example: void printScore(int score) { cout << score; }
+6. What is a Recursive Algorithm? (Factorial Example)
+A Recursive Algorithm is a method where a function calls itself to solve a problem by breaking it down into smaller sub-problems. Every recursive function must have a Base Case to stop the recursion.
+Factorial Implementation:
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    // Base Case
+    if (n <= 1) 
+        return 1;
+    // Recursive Call
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    cout << "Factorial of " << num << " is: " << factorial(num) << endl;
+    return 0;
+}
