@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+float addFourFloats(float a, float b, float c, float d) {
+    return a + b + c + d;
+}
+
+int main() {
+    float result = addFourFloats(1.5, 2.5, 3.0, 4.2);
+    cout << "The sum is: " << result << endl;
+    return 0;
+}
